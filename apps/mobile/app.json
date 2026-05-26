@@ -1,0 +1,21 @@
+{
+	"expo": {
+		"name": "Termul Mobile",
+		"slug": "termul-mobile",
+		"version": "0.1.0",
+		"orientation": "portrait",
+		"userInterfaceStyle": "automatic",
+		"scheme": "termul",
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "dev.termul.mobile"
+		},
+		"android": {
+			"package": "dev.termul.mobile"
+		},
+		"web": {
+			"bundler": "metro"
+		}
+	}
+}
