@@ -10,22 +10,24 @@ Termul Manager is developed as a Tauri-first desktop application. Day-to-day dev
 
 ### Core Tooling
 
-- Node.js 18+
-- [Bun](https://bun.sh) 1.0+
+- Bun 1.3+
 - Rust toolchain (`rustup`, `cargo`, `rustc`)
 - Git
 
 ### Platform Requirements
 
 #### Windows
+
 - Visual Studio 2022 / MSVC build tools
 - WebView2 runtime
 
 #### macOS
+
 - Xcode Command Line Tools
 - Rust toolchain
 
 #### Linux
+
 Install the WebKitGTK and Tauri build dependencies documented in `README.md`.
 
 ## Install
@@ -89,7 +91,7 @@ bun run typecheck
 ### Tests
 
 ```bash
-bun test
+bun run test
 bun run test:watch
 ```
 
@@ -102,6 +104,7 @@ bun run tauri <command>
 ## Source Layout
 
 ### Frontend
+
 - `src/renderer/components/` — UI components
 - `src/renderer/hooks/` — orchestration and lifecycle hooks
 - `src/renderer/stores/` — Zustand state domains
@@ -110,9 +113,11 @@ bun run tauri <command>
 - `src/renderer/layouts/` — app-level layout shells
 
 ### Shared Contracts
+
 - `src/shared/types/` — shared TS types for IPC, persistence, filesystem, updater data
 
 ### Native Runtime
+
 - `src-tauri/src/` — Rust runtime modules
 - `src-tauri/resources/` — injected browser resources such as `annotation-overlay.js`
 - `src-tauri/icons/` — app icons and platform packaging assets
@@ -166,7 +171,7 @@ The app stores local state using Tauri plugin store adapters:
 - `termul-sessions.json` — session persistence
 - logical keys like `projects`, `terminals/{projectId}`, `snapshots/{projectId}`, `window-state`
 
-Project env vars are persisted, and the code notes a future improvement for moving secret values to secure OS storage.
+Project env vars are persisted in local store data, but secret-marked values are redacted before persistence and must be re-entered after app restart until secure OS storage is added.
 
 ## File Watching and Editor Behavior
 
@@ -221,7 +226,7 @@ From `CONTRIBUTING.md`:
 ```bash
 bun run lint
 bun run typecheck
-bun test
+bun run test
 cd src-tauri && cargo check --all-targets && cargo test
 ```
 

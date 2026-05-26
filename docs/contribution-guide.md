@@ -8,8 +8,7 @@ This guide summarizes the project’s documented contribution workflow and repos
 
 ## Prerequisites
 
-- Node.js 18+
-- [Bun](https://bun.sh) 1.0+
+- Bun 1.3+
 - Git
 - Rust toolchain and platform-specific Tauri dependencies for running/building the desktop app
 
@@ -27,7 +26,7 @@ This guide summarizes the project’s documented contribution workflow and repos
 
 ```bash
 bun install
-bun test
+bun run test
 bun run typecheck
 bun run lint
 bun run dev

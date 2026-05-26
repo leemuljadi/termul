@@ -57,7 +57,7 @@ Feature requests are welcome! Please:
 2. Make your changes
 3. Run tests:
    ```bash
-   bun test
+   bun run test
    ```
 4. Run type checking:
    ```bash
@@ -85,6 +85,7 @@ We follow conventional commit messages:
 - `chore:` - Maintenance tasks
 
 Examples:
+
 ```
 feat: add workspace export functionality
 fix: terminal not resizing correctly on window resize
@@ -142,8 +143,7 @@ docs/electron-old/  # Archived Electron docs and migration history
 
 ### Prerequisites
 
-- Node.js 18+
-- [Bun](https://bun.sh) 1.0+
+- Bun 1.3+
 - Git
 
 ### Running Locally
@@ -158,7 +158,7 @@ bun install
 bun run dev
 
 # Run tests
-bun test
+bun run test
 
 # Build for production
 bun run build
